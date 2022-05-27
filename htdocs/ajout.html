@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <!-- L'en-tête de la page -->
+    <head>
+        <!-- pour bootstrap -->
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="custom.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <meta charset="UTF-8" />
+        <meta name="author" content="Alexandra LI COMBEAU LONGUET" />
+        <meta name="Ajouter" content="Ajouter un mot ou une phrase d'exemple" />
+        <title>Ajouter un mot ou une phrase d'exemple</title>
+    </head>
+    <!-- Le contenu du site -->
+    <body>
+        <!-- Le bandeau du site -->
+        <header class="bg-primary">
+            <!-- Le nom du site -->
+            <h1>Idéolangue en action !</h1>
+            <!-- La bar de navigation du site -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Navigation</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="recherche.html#formulaire1">Rechercher une traduction</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="recherche.html#formulaire2">Rechercher une phrase d'exemple</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#formulaire3">Ajouter un mot ou une phrase</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        </header>
+        <!-- le contenu du site -->
+        <main class="mx-auto container">
+            <!-- Le forumilaire d'ajout d'un mot ou d'une phrase' -->
+            <section class="border shadow">
+                <h2 id="formulaire3">J'ajoute un mot ou une phrase...</h2>
+                <form class=".form-horizontal" method="POST" action="ajout.php">
+                <!-- éléments du formulaire -->
+                <fieldset>
+                    <legend>Information Général</legend>
+
+                    <p class="row"><label class="lab col-3" for="type">Qu'ajoutez-vous ?</label> (obligatoire)</p>
+                    <p class="row align-items-center">
+                    <input name="type" id="type" type="radio" value="mot" checked/><label for="mot">Un mot</label>
+                    <input name="type" id="type" type="radio" value="exemple"/><label for="enfant">Une phrase d'exemple d'utilisation d'un mot</label>
+                    </p>
+                    
+                    
+                    <p class="row"><label class="lab col-3" for="mot_source">Quel est ce mot ?</label>
+                    <input class="col-3" type="text" id="mot_source"  name="mot_source" required="required"/></p>
+
+                    <p class="row"><label class="lab col-3" for="langue_source" >Langue du mot source</label>
+                    <select name="langue_source" class="col-3" required="required">
+                    <option value="1">Greedien ancien</option>
+                    <option value="2" >Nespatais</option>
+                    </select></p>
+                </fieldset>
+                <fieldset>
+                    <legend>Si vous ajoutez un mot...</legend>
+                    <p class="row"><label class="lab col-3" for="mot_fr">Quel est sa traduction en francais ?</label>
+                    <input class="col-3" type="text" id="mot_fr"  name="mot_fr"/></p>
+
+                    <p>Uniquement si le mot est en Greedien ancien ...</p>
+
+                    <p class="row"><label class="lab col-3" for="mot_melodie">Quel est sa mélodie tonale?</label>
+                    <input class="col-3" type="text" id="mot_melodie"  name="mot_melodie" pattern="[HL∅F]+"/></p>
+
+                    <p class="row"><label class="lab col-3" for="mot_pos">Quel est sa partie du discours ? (n, np, v, adj, intj, pro, det, etc.)</label>
+                        <input class="col-3" type="text" id="mot_pos"  name="mot_pos"/></p>
+                    
+                    <p class="row"><label class="lab col-3" for="mot_pos">Une brève explciation du mot...</label>
+                      <input class="col-3" type="text" id="explication"  name="explciation"/></p>
+                        
+                </fieldset>
+                <fieldset>
+                    <legend>Si vous ajoutez une phrase d'exemple ...</legend>
+
+                    <p class="row"><label class="lab col-6" for="p_source">Quel est la phrase d'exemple ?</label>
+                    <input class="col-9" type="text" id="p_source"  name="p_source"/></p>
+
+                    <p class="row"><label class="lab col-6" for="p_fr">Quel est sa traduction en francais ?</label>
+                        <input class="col-9" type="text" id="p_fr"  name="p_fr"/></p>
+                    
+                    <input class="btn btn-primary mb-2" type="submit" value="Envoyer" />
+                </fieldset>
+                </form>
+            </section>
+        </main>
+        <!-- Le peid de page du site -->
+        <footer class="fixed-bottom text-dark">@Alexandra LI COMBEAU LONGUET</footer>
+</body>
+</html>
